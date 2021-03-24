@@ -22,7 +22,7 @@ paths:
             application/json:
               schema: {}
 
-/myAlpha/strategy/stock/<arg1>/time/<arg2>/start/<arg3>/end/<arg4>:
+  /myAlpha/strategy/stock/<arg1>/time/<arg2>/start/<arg3>/end/<arg4>:
     get:
       tags:
         - Plot
