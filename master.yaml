@@ -22,5 +22,18 @@ paths:
             application/json:
               schema: {}
 
+/myAlpha/strategy/stock/<arg1>/time/<arg2>/start/<arg3>/end/<arg4>:
+    get:
+      tags:
+        - Plot
+      operationId: volatility_of_stock_vs_market.diff_vol_strat_dates
+      description: "Shows the strategy over user input dates"
+      responses:
+        '200':
+          description: "Perfoms calculations to show strategy"
+          content:
+            application/json:
+              schema: {}
+
 servers:
   - url: 'http://localhost:8080/finance'

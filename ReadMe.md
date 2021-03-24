@@ -28,7 +28,7 @@ localhost:8080/finance/myAlpha/strategy/stock/<arg1>/time/<arg2>
 ```
 Graph of buying and selling when the difference of volatilites are high and low respectively from user input dates:
 ```
-WIP
+localhost:8080/finance/myAlpha/strategy/stock/<arg1>/time/<arg2>/start/<arg3>/end/<arg4>
 ```
 The profits of using this strategy:
 ```

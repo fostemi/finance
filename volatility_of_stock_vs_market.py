@@ -20,6 +20,9 @@ def visualize_data(underlying):
     bytes_image.seek(0)
     return bytes_image
     
+def target_index(start_date = '2020-01-01', end_date = '2021-01-01'):
+    return web.DataReader('^GSPC', data_source = 'yahoo', start = start_date, end = start_date)
+
 def target_stock(stock, start_date = '2020-01-01', end_date = '2021-01-01'):
     return web.DataReader(stock, data_source = 'yahoo', start = start_date, end = end_date)
 
@@ -99,8 +102,16 @@ def diff_volatility_strategy(arg1,arg2):
     calc_index = pd.to_numeric(df_spy['Close'])
     vd_alpha = vol_difference(calc_stock, calc_index, time)
     visualize_vol(vd_alpha)
-    plot = visualize_strategy(vd_alpha, calc_stock)
-    return send_file(plot, attachment_filename = 'plot.png', mimetype = 'image/png')
+    plot1 = visualize_strategy(vd_alpha, calc_stock)
+    return send_file(plot1, attachment_filename = 'plot1.png', mimetype = 'image/png')
 
-#def diff_vol_strat_dates(arg1,arg2,arg3,arg4):
-#    stock = target_stock(arg1,arg3,arg4)
+def diff_vol_strat_dates(arg1,arg2,arg3,arg4):
+    stock = target_stock(arg1,arg3,arg4)
+    index = target_index(arg3,arg4)
+    time = int(arg2)
+    calc_stock = pd.to_numeric(stock['Close'])
+    calc_index = pd.to_numeric(index['Close'])
+    vd_alpha = vol_difference(calc_stock, calc_index, time)
+    visualize_vol(vd_alpha)
+    plot2 = visualize_strategy(vd_alpha, calc_stock)
+    return send_file(plot2, attachment_filename = 'plot2.png', mimetype = 'image/png')
