@@ -4,6 +4,7 @@ import statistics
 import io
 import numpy as np
 import matplotlib.pyplot as plt
+from flask import send_file
 plt.style.use('fivethirtyeight')
 
 df_spy = web.DataReader('^GSPC', data_source = 'yahoo', start = '2020-01-01', end = '2021-01-01')
