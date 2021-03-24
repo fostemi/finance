@@ -82,7 +82,7 @@ def visualize_strategy(alpha,stock):
 def diff_volatility_strategy(arg1,arg2):
     visualize_data(df_spy)
     stock = target_stock(arg1)
-    time = arg2
+    time = int(arg2)
     visualize_data(stock)
     calc_stock = pd.to_numeric(stock['Close'])
     calc_index = pd.to_numeric(df_spy['Close'])
