@@ -24,7 +24,7 @@ RUN python get-pip.py
 RUN pip install -U pip setuptools
 RUN pip install psutil
 
-RUN git clone https://github.com/fostemii/finance/
+RUN git clone https://github.com/fostemi/finance/
 
 WORKDIR finance/
 
