@@ -115,5 +115,3 @@ def diff_vol_strat_dates(arg1,arg2,arg3,arg4):
     visualize_vol(vd_alpha)
     plot2 = visualize_strategy(vd_alpha, calc_stock)
     return send_file(plot2, attachment_filename = 'plot2.png', mimetype = 'image/png')
-
-diff_vol_strat_dates('MSFT', 10, '2020-01-01', '2021-01-01')
