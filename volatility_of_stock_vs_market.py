@@ -20,8 +20,8 @@ def visualize_data(underlying):
     bytes_image.seek(0)
     return bytes_image
     
-def target_stock(stock):
-    return web.DataReader(stock, data_source = 'yahoo', start = '2020-01-01', end = '2021-01-01')
+def target_stock(stock, start_date = '2020-01-01', end_date = '2021-01-01'):
+    return web.DataReader(stock, data_source = 'yahoo', start = start_date, end = end_date)
 
 #Difference between volatility of spy and the chosen underlying
 def vol_difference(stock, index, time):
@@ -81,8 +81,8 @@ def visualize_strategy(alpha,stock):
     plt.figure(figsize = (16,8))
     plt.title('Volatility of Difference Vs. Stock Price')
     plt.plot(stock_price, alpha = .25)
-    plt.scatter(positive_outlier_idx, stock_price[0:], label = 'Outlier', marker = 'X', color = 'Black')
-    plt.scatter(negative_outlier_idx, stock_price[0:], label = 'Outlier', marker = 'X', color = 'Orange')
+    plt.scatter(positive_outlier_idx, stock_price, label = 'Outlier', marker = 'X', color = 'Black')
+    plt.scatter(negative_outlier_idx, stock_price, label = 'Outlier', marker = 'X', color = 'Orange')
     plt.xlabel('Days', fontsize = 18)
     plt.ylabel('Volatility of Difference', fontsize = 18)
     bytes_image = io.BytesIO()
@@ -101,3 +101,6 @@ def diff_volatility_strategy(arg1,arg2):
     visualize_vol(vd_alpha)
     plot = visualize_strategy(vd_alpha, calc_stock)
     return send_file(plot, attachment_filename = 'plot.png', mimetype = 'image/png')
+
+#def diff_vol_strat_dates(arg1,arg2,arg3,arg4):
+#    stock = target_stock(arg1,arg3,arg4)
