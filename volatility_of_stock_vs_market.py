@@ -13,7 +13,10 @@ def visualize_data(underlying):
     plt.plot(underlying['Close'])
     plt.xlabel('Date', fontsize = 18)
     plt.ylabel('Close Price USD ($)', fontsize = 18)
-    plt.show
+    bytes_image = io.BytesIO()
+    plt.savefig(bytes_image, format='png')
+    bytes_image.seek(0)
+    return bytes_image
     
 def target_stock(stock):
     return web.DataReader(stock, data_source = 'yahoo', start = '2020-01-01', end = '2021-01-01')
@@ -35,7 +38,10 @@ def visualize_vol(alpha):
     plt.plot(alpha)
     plt.xlabel('Date', fontsize = 18)
     plt.ylabel('Volatility of Difference', fontsize = 18)
-    plt.show
+    bytes_image = io.BytesIO()
+    plt.savefig(bytes_image, format='png')
+    bytes_image.seek(0)
+    return bytes_image
     
 def outliers(alpha):
     arr = np.array(alpha)
@@ -77,7 +83,10 @@ def visualize_strategy(alpha,stock):
     plt.scatter(negative_outlier_idx, stock_price[0:], label = 'Outlier', marker = 'X', color = 'Orange')
     plt.xlabel('Days', fontsize = 18)
     plt.ylabel('Volatility of Difference', fontsize = 18)
-    plt.show
+    bytes_image = io.BytesIO()
+    plt.savefig(bytes_image, format='png')
+    bytes_image.seek(0)
+    return bytes_image
     
 def diff_volatility_strategy(arg1,arg2):
     visualize_data(df_spy)
@@ -88,4 +97,5 @@ def diff_volatility_strategy(arg1,arg2):
     calc_index = pd.to_numeric(df_spy['Close'])
     vd_alpha = vol_difference(calc_stock, calc_index, time)
     visualize_vol(vd_alpha)
-    visualize_strategy(vd_alpha, calc_stock)
+    plot = visualize_strategy(vd_alpha, calc_stock)
+    return send_file(plot, attachment_filename = 'plot.png', mimetype = 'image/png')
