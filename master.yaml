@@ -1,26 +1,27 @@
 openapi: 3.0.0
 info:
-    version: "1.0.0"
-    title: Volatility Difference of Stocks vs. Their Index
-    description: Strategy showing how to trade when stock volatility is much greater than index volatility
-    termsOfService: 'http://swagger.io/terms/'
-    contact:
-        name: "Michael Foster"
-    license:
-        name: Apache
-paths:
-    /myAlpha/strategy/stock/<arg1>/time/<arg2>:
-        get:
-            tags:
-                - Matplot
-            operationId: volatility_of_stock_vs_market.diff_volatility_strategy
-            description: "Shows the strategy defined in Readme"
-            responses:
-            '200':
-              description: "Perfoms calculations to show strategy"
-              content:
-                application/json:
-                  schema: {}
-                  
+  version: "1.0.0"
+  title: Volatility Difference of Stocks vs. Their Index
+  description: Strategy showing how to trade when stock volatility is much greater than index volatility
+  termsOfService: 'http://swagger.io/terms/'
+  contact:
+    name: "Michael Foster"
+  license:
+    name: Apache
+paths: 
+  /myAlpha/strategy/stock/<arg1>/time/<arg2>:
+    get:
+      tags:
+        - Plot
+      operationId: volatility_of_stock_vs_market.diff_volatility_strategy
+      description: "Shows the strategy"
+      responses:
+        '200':
+          description: "Perfoms calculations to show strategy"
+          content:
+            application/json:
+              schema: {}
+
+
 servers:
   - url: 'http://localhost:8080/finance'
