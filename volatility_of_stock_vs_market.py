@@ -2,7 +2,6 @@ import pandas as pd
 import pandas_datareader as web
 import statistics
 import numpy as np
-import math
 import matplotlib.pyplot as plt
 plt.style.use('fivethirtyeight')
 

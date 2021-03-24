@@ -2,7 +2,6 @@ pandas
 pandas_datareader
 statistics
 numpy
-math
 matplotlib.pyplot
 flask
 connexion[swagger-ui]
