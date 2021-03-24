@@ -21,6 +21,18 @@ paths:
           content:
             application/json:
               schema: {}
+  /ReadMe:
+    get:
+      tags:
+        - Readme
+      operationId: ReadMe
+      description: "The Readme for the project explains how things work"
+      responses:
+        '200':
+          description: "Explains how to find the results of everything"
+          content:
+            application/json:
+              schema: {}
 
 
 servers:
