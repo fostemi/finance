@@ -21,7 +21,7 @@ def visualize_data(underlying):
     return bytes_image
     
 def target_index(start_date = '2020-01-01', end_date = '2021-01-01'):
-    return web.DataReader('^GSPC', data_source = 'yahoo', start = start_date, end = start_date)
+    return web.DataReader('^GSPC', data_source = 'yahoo', start = start_date, end = end_date)
 
 def target_stock(stock, start_date = '2020-01-01', end_date = '2021-01-01'):
     return web.DataReader(stock, data_source = 'yahoo', start = start_date, end = end_date)
@@ -115,3 +115,5 @@ def diff_vol_strat_dates(arg1,arg2,arg3,arg4):
     visualize_vol(vd_alpha)
     plot2 = visualize_strategy(vd_alpha, calc_stock)
     return send_file(plot2, attachment_filename = 'plot2.png', mimetype = 'image/png')
+
+diff_vol_strat_dates('MSFT', 10, '2020-01-01', '2021-01-01')
