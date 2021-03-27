@@ -88,6 +88,7 @@ def visualize_strategy(alpha,stock):
     plt.scatter(negative_outlier_idx, stock_price, label = 'Outlier', marker = 'X', color = 'Orange')
     plt.xlabel('Days', fontsize = 18)
     plt.ylabel('Volatility of Difference', fontsize = 18)
+    plt.legend(loc = 'upper right')
     bytes_image = io.BytesIO()
     plt.savefig(bytes_image, format='png')
     bytes_image.seek(0)
