@@ -77,9 +77,7 @@ def outliers(alpha):
 def visualize_strategy(alpha,stock):
     outlier = []
     positive_outlier_idx, negative_outlier_idx = outliers(alpha)
-    stock_price = []
-    for i in range(len(stock)):
-        stock_price.append([stock[i]])
+    stock_price = [x for x in stock]
     #Now plotting
     plt.figure(figsize = (16,8))
     plt.title('Volatility of Difference Vs. Stock Price')
