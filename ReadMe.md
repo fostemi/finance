@@ -12,7 +12,7 @@ My Formula: α = Δz/Δt - Δi/Δt
 Stock's with over inflated Alpha's are overextended and due for a recorrection.  A recorrection may be an increase or a decrease to a more median price with respect to the overhead index.
 
 ### Data And Analysis:
-Follow the endpoints to see different stocks ran in the S&P 500.  
+To view the charts and data, download the code in the Strategy_1 directory and follow the endpoints to see different stocks ran in the S&P 500.  
 
 To run everything run the following command:
 ```
