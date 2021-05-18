@@ -4,8 +4,8 @@
 Alpha is the risk relative to the market.  Extended trading funds find their alpha to see how they are doing against the market.  They look at their gains against the gains of the S&P 500 to give a value to their performance. The goal of this notebook is to find the difference of different popular stocks in the S&P 500 and find a correlation between the change of a stock price vs. it's index and the stock price.  For example, Tesla vs. S&P 500, how does the difference between the two mean about the stock?
 
 ### My Formula
-Underlying Security Price: z
-Overhead Index Price: i
+Underlying Security Price: z   
+Overhead Index Price: i  
 My Formula: α = Δz/Δt - Δi/Δt
 
 ### Hypothesis:
