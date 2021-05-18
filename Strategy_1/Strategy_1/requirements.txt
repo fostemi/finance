@@ -1,0 +1,7 @@
+pandas
+pandas_datareader
+statistics
+numpy
+matplotlib
+flask
+connexion[swagger-ui]
